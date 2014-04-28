@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        body{
+            font-family: Avenir;
+        }
+
+        span.border{
+            display: inline-block;
+            margin: 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
+        }
+
+        span.bold{
+            font-weight: 700;
+        }
+    </style>
+    <title></title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.myspan').addClass('border').click(function(){
+                console.log(this.innerHTML);
+            });
+
+            $('.myspan').addClass('border').click(function(){
+                console.log(this.innerHTML + '1');
+            });
+
+            var events = ['click', 'hover'];
+
+
+
+            $('.myspan').bind('click', function(){
+                $(this).toggleClass('bold');
+            });
+
+            $('<span>').addClass('myspan').addClass('border').html('Span4').appendTo($(document.body));
+
+        });
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+
+    </div>
+    <span class="myspan">Span1</span>
+    <span class="myspan">Span2</span>
+    <span class="myspan">Span3</span>
+</body>
+</html>
